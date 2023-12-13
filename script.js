@@ -11,6 +11,10 @@ const body = document.querySelector("body")
 body.addEventListener("mousemove", (e) => {
     cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
 })
+
+body.addEventListener("scrollend", (e)=> {
+    // root.style.setProperty('--mouse-y', window.scrollY + e.clientY + "px");
+  });
 // Ecoute de l'événement selon lequel le curseur entre sur le body; application de la classe "appear"
 body.addEventListener("pointerenter", (e) => {
     cursor.classList.add("appear")
@@ -22,7 +26,7 @@ body.addEventListener("pointerenter", (e) => {
 })
 // Ecoute de l'évènement "click"; ajout/activation des classes appropriées
 body.addEventListener("click", (e) => {
-    cursor.classList.add("expand");   
+    cursor.classList.add("expand"); 
     setTimeout(() => {
         cursor.classList.remove("expand")
     }, 500)
@@ -32,7 +36,3 @@ body.addEventListener("click", (e) => {
 body.addEventListener("pointerleave", (e) => {
     cursor.classList.add("vanish");
 })
-
-array.forEach(element => {
-    
-});
