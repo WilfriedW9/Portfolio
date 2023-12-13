@@ -1,0 +1,169 @@
+*, *::before, *::after {
+    margin: 0;
+   box-sizing: border-box;
+}
+
+html {
+    overflow-x: none;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+    }
+
+@font-face {
+    font-family: "Cosimacore";
+    src: url("Fonts/Fontspring-DEMO-cosimacore-regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "FormativeTrial";
+    src: url("Fonts/FormativeTrial-Regular-BF656fed9028715.otf") format("opentype");
+}
+.bloc {
+    height: 100vh;
+}
+
+
+/* Souris */
+.cursor{
+    z-index: 999;
+    border: 0;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+    transition-timing-function: ease-in-out;
+    animation: cursorAnim 1s infinite alternate;
+}
+
+.cursor:after {
+    content: "";
+    top: 8px;
+    left: 8px;
+    width: 2px;
+    height: 2px;
+    border: 1.5px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.expand{
+    animation: cursorAnim2 .5s;
+}
+
+.vanish{
+    animation: cursorAnim3 .5s forwards;
+}
+.appear{
+    animation: cursorAnim4 2s ;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1)
+    }
+    to {
+        transform: scale(.8)
+    }
+}
+
+@keyframes cursorAnim2 {
+    0% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.5)
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0; 
+    }
+}
+
+
+@keyframes cursorAnim3 {
+    0% {
+        opacity: 100;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0; 
+    }
+}
+
+@keyframes cursorAnim4 {
+    from {
+        transform: scale(3);
+        opacity: 0;
+    }
+
+    to{
+        transform: scale(1);
+        opacity: 100; 
+    }
+}
+
+/* Premier bloc */
+
+.pediluve {
+    position: relative;
+    display: grid;
+    border-collapse: collapse ;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    height: 100%;
+    width: 100%;
+    border: solid 1rem black;
+    background-color: #ece0d4;
+    
+
+
+}
+
+.prenom, .nom, .job {
+    position: absolute;
+    font-family: 'FormativeTrial';
+}
+
+.prenom, .nom {
+    font-size: 25vh;
+    background-color: #ece0d4;
+}
+
+.prenom {
+    top: calc(0vh - 3px);
+    left: 10vw
+}
+
+.nom {
+    top: calc(27vh - 2px);
+    left: 43vw;
+}
+
+.job {
+    font-size: 10vh;
+    top: 78vh;
+    left: 11vw;
+    display: flex;
+}
+
+
+.line {
+    border: 1px solid black;
+    animation: squares 1s forwards ease-out;
+
+}
+
+@keyframes squares {
+    from {
+        border: 42px solid black;
+    }
+    to {
+        border: 1px solid black;
+    }
+}
+
