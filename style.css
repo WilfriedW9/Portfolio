@@ -1,17 +1,3 @@
-*, *::before, *::after {
-    margin: 0;
-   box-sizing: border-box;
-}
-
-html {
-    overflow-x: none;
-}
-
-
-/* ::-webkit-scrollbar {
-    display: none;
-    } */
-
 @font-face {
     font-family: "Cosimacore";
     src: url("Fonts/Fontspring-DEMO-cosimacore-regular.otf") format("opentype");
@@ -21,6 +7,26 @@ html {
     font-family: "FormativeTrial";
     src: url("Fonts/FormativeTrial-Regular-BF656fed9028715.otf") format("opentype");
 }
+
+@font-face {
+    font-family: "Ruberoid";
+    src: url("Fonts/Pepper\ Type\ -\ Ruberoid-UltraLight.otf") format("opentype");
+}
+
+*, *::before, *::after {
+    margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+    overflow-x: none;
+}
+
+
+/* ::-webkit-scrollbar {
+    display: none;
+    } */
+
 .bloc {
     height: 100vh;
 }
@@ -28,23 +34,24 @@ html {
 
 /* Souris */
 .cursor{
-    z-index: 999;
+    z-index: 998;
     border: 0;
-    width: 20px;
-    height: 20px;
+    /* width: 20px;
+    height: 20px; */
     border: 1.5px solid rgb(0, 0, 0);
     border-radius: 50%;
     position: absolute;
     transition-timing-function: ease-in-out;
     animation: cursorAnim 1s infinite alternate;
+    user-select: none;
 }
 
 .cursor:after {
     content: "";
     top: 8px;
     left: 8px;
-    width: 2px;
-    height: 2px;
+    width: 20px;
+    height: 20px;
     border: 1.5px solid rgb(0, 0, 0);
     border-radius: 50%;
     position: absolute;
@@ -124,21 +131,23 @@ html {
 
 }
 
-.prenom, .nom, .job {
+.prenom, .nom, .job, .char {
     position: absolute;
     font-family: 'FormativeTrial';
     opacity: 0;
-    animation: appear 1s forwards 1s;
+    animation: appear 1s forwards 0.75s;
+    /* user-select: none; */
 }
 
 .prenom, .nom, .job{
     font-size: 25vh;
-    background-color: #ece0d4;
+    /* background-color: #ece0d4; */
+    backdrop-filter: blur(21px);
 }
 
 .prenom {
-    top: calc(0vh - 3px);
-    left: 10vw
+    top: calc(0vh - -1px);
+    left: 7vw;
 }
 
 .nom {
@@ -149,7 +158,7 @@ html {
 .job {
     font-size: 10vh;
     top: 78vh;
-    left: 11vw;
+    left: 24vw;
     display: flex;
 }
 
@@ -184,5 +193,18 @@ html {
 
 .bloc:nth-child(even) {
     background-color: grey;
+}
+
+p, h2, h3, ul {
+    font-size: 4rem;
+    font-family: "Ruberoid" ;
+}
+
+ul {
+    list-style: none;
+}
+
+footer {
+    background-color: red;
 }
 
